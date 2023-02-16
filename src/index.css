@@ -1,13 +1,401 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --bg-color: hsl(226, 43%, 10%);
+  --text-color: hsl(236, 100%, 87%);
+  --container-bg: hsl(235, 46%, 20%);
+  --purple-border: hsl(264, 64%, 52%);
+  --red-border: hsl(15, 100%, 70%);
+  --green-border: hsl(145, 58%, 55%);
+  --orange-border: hsl(43, 84%, 65%);
+  --pale-blue-border: hsl(236, 100%, 87%);
+  --blue-border: hsl(246, 80%, 60%);
+  --box-shadow: 18px 18px 1.4rem rgba(0, 0, 0, 0.4);
+}
+
+li {
+  list-style: none;
+}
+
+::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+  letter-spacing: 1px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  /* overflow: hidden; */
+}
+
+.container {
+  min-height: 98vh;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  background-color: var(--container-bg);
+  transition: all ease-in-out 400ms;
+}
+
+.container .welcome-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 55vh;
+  width: 90%;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.container .welcome-section p {
+  margin-top: -2rem;
+  width: 80%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.container .welcome-section input {
+  border: 0.5px solid var(--bg-color);
+  border-radius: 6px;
+  outline: none;
+  padding: 0.8rem 1rem;
+  background-color: var(--container-bg);
+  color: var(--text-color);
+  width: 80%;
+}
+
+.container .welcome-section input:focus {
+  color: var(--text-color);
+}
+
+.container .welcome-section button {
+  border: none;
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(5, 136, 5);
+  color: white;
+  padding: 10px;
+  width: 40%;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.container .welcome-section button:hover {
+  cursor: pointer;
+  background-color: rgb(9, 212, 9);
+  color: aliceblue;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background-color: rgb(163, 163, 163);
+  height: 3rem;
+  color: var(--container-bg);
+  width: 90%;
+  border: 2px solid rgb(236, 65, 65);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background-color: rgb(163, 163, 163);
+  height: 3rem;
+  color: var(--container-bg);
+  width: 90%;
+  border: 2px solid rgb(4, 179, 4);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.proper-page {
+  height: 100%;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.proper-page .header-section {
+  padding-top: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.proper-page .header-section .welcome-text {
+  width: 90%;
+  font-weight: bold;
+  line-height: 1.4;
+  font-size: 17px;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.proper-page .header-section .img-div {
+  width: 90%;
+  height: 24vh;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 8px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.proper-page .header-section .img-div img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.proper-page .header-section .date-time {
+  padding: 0.6rem 0;
+  width: 90%;
+  font-weight: bold;
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 8px rgba(0, 255, 255, 0.06);
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.proper-page .header-section .date-time #time {
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  word-spacing: 2px;
+}
+
+.proper-page .todo {
+  width: 90%;
+}
+
+.proper-page .todo .todos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.proper-page .todo .todos ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.proper-page .todo .todos ul .item {
+  padding-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.proper-page .item input:hover {
+  cursor: pointer;
+}
+
+.red {
+  border-right: solid 3px var(--red-border);
+}
+.green {
+  border-right: solid 3px var(--green-border);
+}
+.purple {
+  border-right: solid 3px var(--purple-border);
+}
+.orange {
+  border-right: solid 3px var(--orange-border);
+}
+.pale-blue {
+  border-right: solid 3px var(--pale-blue-border);
+}
+.blue {
+  border-right: solid 3px var(--blue-border);
+}
+
+.proper-page .todo .todos ul .item li {
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 1px 2px 4px rgba(255, 255, 255, 0.2);
+  margin-left: 0.6rem;
+  /* padding: 0.2rem 0; */
+  letter-spacing: 0.8px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  transition: all 200ms ease-in-out;
+}
+
+.proper-page .todo .todos ul .item li:hover {
+  cursor: pointer;
+  border-right: solid 3px rgb(240, 41, 41);
+  font-size: 14.3px;
+  color: rgb(240, 41, 41);
+}
+
+.proper-page .todo .enter-todos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  bottom: 1.4rem;
+  gap: 1.6rem;
+  left: 1.2rem;
+}
+
+.proper-page .todo .enter-todos input {
+  padding: 0.6rem 0.8rem;
+  border: 0.5px solid var(--bg-color);
+  border-radius: 6px;
+  outline: none;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 95%;
+  margin-top: 1rem;
+}
+
+.proper-page .todo .enter-todos input:focus {
+  color: var(--text-color);
+}
+
+.proper-page .todo .enter-todos button {
+  border: none;
+  background-color: rgb(5, 136, 5);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+
+.proper-page .todo .enter-todos button:hover {
+  cursor: pointer;
+  background-color: rgb(9, 212, 9);
+  color: aliceblue;
+}
+
+/* Media queries */
+/* larger mobiles or smaller desktop screens */
+@media (max-width: 800px) {
+  body {
+    height: 100vh;
+  }
+  .container {
+    height: 98%;
+    width: 70%;
+  }
+}
+
+/* mobile phones */
+@media (max-width: 400px) {
+  body {
+    height: 100vh;
+  }
+  .container {
+    height: 98%;
+    width: 90%;
+  }
+
+  .container .welcome-section {
+    gap: 1.6rem;
+    height: 50vh;
+    width: 90%;
+  }
+
+  .container .welcome-section p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+
+  .container .welcome-section input {
+    margin-bottom: 1rem;
+  }
+
+  .container .welcome-section button {
+    margin-top: 0.5rem;
+  }
+
+  .proper-page .header-section {
+    padding-top: 1.2rem;
+    gap: 1.2rem;
+  }
+
+  .proper-page .header-section .welcome-text {
+    line-height: 1.4;
+    font-size: 15px;
+  }
+
+  .proper-page .header-section .img-div {
+    height: 20vh;
+  }
+
+  .proper-page .header-section .date-time {
+    padding: 0.4rem 0;
+    line-height: 1.2;
+    word-spacing: 2px;
+  }
+
+  .proper-page .header-section .date-time #time {
+    margin-top: 0.2rem;
+  }
+
+  .proper-page .todo .todos {
+    margin-top: 1.2rem;
+  }
+
+  .proper-page .todo .enter-todos {
+    bottom: 0.8rem;
+    gap: 1.4rem;
+  }
+
+  .proper-page .todo .enter-todos input {
+    width: 70%;
+    margin-left: 0.5rem;
+  }
 }
