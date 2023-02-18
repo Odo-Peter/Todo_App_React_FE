@@ -9,3 +9,6 @@ M - MongoDB for database
 E - Express for Server related issues
 R - React for frontend and user interface related issues
 N - NodeJs for ease of running of the backend
+
+## The live URL
+[Todo-App](https://todo-fullstack-app-wbq4.onrender.com)
