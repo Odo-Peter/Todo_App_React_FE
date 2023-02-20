@@ -107,40 +107,6 @@ body {
   color: aliceblue;
 }
 
-.error {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1rem;
-  background-color: rgb(163, 163, 163);
-  height: 3rem;
-  color: var(--container-bg);
-  width: 90%;
-  border: 2px solid rgb(236, 65, 65);
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.success {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 1rem;
-  background-color: rgb(163, 163, 163);
-  height: 3rem;
-  color: var(--container-bg);
-  width: 90%;
-  border: 2px solid rgb(4, 179, 4);
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: bold;
-}
-
 .proper-page {
   height: 100%;
   width: 90%;
@@ -321,31 +287,22 @@ body {
 }
 
 /* Media queries */
-/* larger mobiles or smaller desktop screens */
-@media (max-width: 800px) {
-  body {
-    height: 100vh;
-  }
-  .container {
-    height: 98%;
-    width: 70%;
-  }
-}
-
 /* mobile phones */
 @media (max-width: 400px) {
   body {
     height: 100vh;
   }
   .container {
+    margin: 0 auto;
     height: 98%;
     width: 90%;
   }
 
   .container .welcome-section {
     gap: 1.6rem;
-    height: 50vh;
+    height: 52vh;
     width: 90%;
+    padding: 0.8rem 0;
   }
 
   .container .welcome-section p {
@@ -391,11 +348,10 @@ body {
 
   .proper-page .todo .enter-todos {
     bottom: 0.8rem;
-    gap: 1.4rem;
+    gap: 1.5rem;
   }
 
   .proper-page .todo .enter-todos input {
-    width: 70%;
-    margin-left: 0.5rem;
+    width: 90%;
   }
 }
